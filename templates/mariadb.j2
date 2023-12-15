@@ -1,0 +1,30 @@
+[Unit]
+Description=MariaDB Database Server
+Documentation=man:mysqld(8)
+Documentation=https://mariadb.com/kb/en/library/systemd/
+After=networking.target
+After=syslog.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+PrivateNetwork=false
+User=mysql
+Group=mysql
+
+CapabilityBoundingSet=CAP_IPC_LOCK
+ProtectSystem=full
+PrivateDevices=true
+PermissionsStartOnly=true
+
+ExecStartPre=/usr/bin/install -m 755 -o mysql -g root -d {{ mysql_path }}/socket
+ExecStart=/opt/mariadb/bin/mysqld $MYSQLD_OPTS --defaults-file={{ mycnf_path }}/my.cnf
+KillSignal=SIGTERM
+SendSIGKILL=no
+Restart=on-abort
+RestartSec=5s
+UMask=007
+PrivateTmp=false
+LimitNOFILE=65535

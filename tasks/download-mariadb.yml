@@ -1,0 +1,16 @@
+---
+
+- name: Download tarball
+  get_url:
+   url: "{{ mariadb_url }}"
+   dest: /opt
+  #  checksum: md5:bf41499c00b04eb8bb50d508f5618fd9
+   mode: '0660' # https://mariadb.com/kb/en/specifying-permissions-for-schema-data-directories-and-tables/
+
+- name: Extract tar
+  unarchive:
+   src: "/opt/{{ mariadb }}"
+   dest: '/opt/'
+   owner: root
+   group: root
+   remote_src: true

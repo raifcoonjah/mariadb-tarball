@@ -1,0 +1,11 @@
+---
+- name: Create mysql group
+  group:
+    name: mysql
+    state: present
+
+- name: Create user mysql
+  user:
+    name: mysql
+    comment: User for mysql
+    group: mysql

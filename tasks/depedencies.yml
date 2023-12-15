@@ -1,0 +1,10 @@
+---
+- name: Download libaio1
+  apt:
+   name: libaio1
+   state: present
+
+- name: Download libcurses
+  apt:
+    name: libncurses5
+    state: present

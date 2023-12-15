@@ -1,0 +1,20 @@
+---
+# tasks file for mariadb-tarball
+- name: Clean up 
+  import_tasks: cleanup.yml
+- name: Download depedencies
+  import_tasks: depedencies.yml
+- name: Download mariadb tarball # 1
+  import_tasks: download-mariadb.yml
+- name: Create symlink # 2 
+  import_tasks: create-symlink.yml 
+- name: User creation # 3 
+  import_tasks: user-creation.yml
+- name: Create MySQL Directory # 4 
+  import_tasks: mysql-configuration.yml
+- name: Initialize datadir
+  import_tasks: init-datadir.yml
+- name: Configure systemd service
+  import_tasks: service.yml
+- name: Add mariadb executable to path
+  import_tasks: exec_path.yml

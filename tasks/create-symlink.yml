@@ -1,0 +1,8 @@
+---
+
+- name: Create Symlink
+  file:
+   src: "/opt/{{ mariadb_path }}"
+   dest: /opt/mariadb
+   state: link
+

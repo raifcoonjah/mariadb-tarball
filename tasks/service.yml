@@ -1,0 +1,14 @@
+---
+- name: Copy mariadb.service
+  template:
+    src: mariadb.j2
+    dest: '/usr/lib/systemd/system/mariadb.service'
+    owner: mysql
+    group: mysql
+
+- name: Start MariaDB service 
+  systemd: 
+    name: mariadb.service
+    daemon_reload: true
+    enabled: true
+    state: started

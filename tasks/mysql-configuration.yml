@@ -1,0 +1,50 @@
+---
+- name: Create MySQL directories
+  file:
+    path: '{{ mysql_path }}' # /home/mysql
+    state: directory
+    owner: mysql
+    group: mysql
+
+- name: Create /etc/mysql directory
+  file:
+    path: '{{ mycnf_path }}' # /etc/mysql
+    state: directory
+    owner: mysql
+    group: mysql
+
+- name: Copy my.cnf to path
+  template:
+    src: mycnf.j2
+    dest: '{{ mycnf_path }}/my.cnf'
+    owner: mysql
+    group: mysql
+
+- name: Create Data dir
+  file:
+    path: '{{ mysql_path }}/data'
+    state: directory
+    owner: mysql
+    group: mysql
+
+- name: Create tmp dir
+  file:
+    path: '{{ mysql_path }}/tmp'
+    state: directory
+    owner: mysql
+    group: mysql
+
+- name: Create log dir
+  file:
+    path: '{{ mysql_path }}/log'
+    state: directory
+    owner: mysql
+    group: mysql
+
+- name: Create socket dir
+  file:
+    path: '{{ mysql_path }}/socket'
+    state: directory
+    owner: mysql
+    group: mysql
+    

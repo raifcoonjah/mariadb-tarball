@@ -1,0 +1,9 @@
+---
+# defaults file for mariadb-tarball
+
+# MariaDB URL
+mariadb_url: "https://mirror.23m.com/mariadb/mariadb-10.4.32/bintar-linux-systemd-x86_64/mariadb-10.4.32-linux-systemd-x86_64.tar.gz"
+mysql_path: /home/mysql
+mycnf_path: /etc/mysql
+mariadb: 'mariadb-10.4.32-linux-systemd-x86_64.tar.gz'
+mariadb_path: 'mariadb-10.4.32-linux-systemd-x86_64'

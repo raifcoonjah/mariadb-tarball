@@ -1,0 +1,3 @@
+---
+- name: Initialize data dir
+  shell: "/opt/mariadb/scripts/mysql_install_db --user=mysql --defaults-file={{ mycnf_path }}/my.cnf"

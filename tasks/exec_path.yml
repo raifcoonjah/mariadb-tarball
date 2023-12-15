@@ -1,0 +1,15 @@
+---
+
+- name: Create /etc/environment
+  file:
+    path: /etc/environment
+    state: touch
+
+- name: Add mariadb executable
+  lineinfile:
+   path: /etc/environment
+   line: 'PATH="$PATH:/opt/mariadb/bin"'
+   state: present
+
+- name: Source /etc/environment
+  command: source /etc/environment
