@@ -8,7 +8,7 @@
 - name: Add mariadb executable
   lineinfile:
    path: /etc/environment
-   line: 'PATH="$PATH:/opt/mariadb/bin"'
+   line: PATH="$PATH:/opt/mariadb/bin"
    state: present
 
 - name: Source /etc/environment
