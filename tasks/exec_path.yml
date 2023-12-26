@@ -10,6 +10,3 @@
    path: /etc/environment
    line: PATH="$PATH:/opt/mariadb/bin"
    state: present
-
-- name: Source /etc/environment
-  command: source /etc/environment
