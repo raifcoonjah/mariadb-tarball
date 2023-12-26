@@ -1,7 +1,5 @@
 ---
 # tasks file for mariadb-tarball
-- name: Clean up 
-  import_tasks: cleanup.yml
 - name: Download depedencies
   import_tasks: depedencies.yml
 - name: Download mariadb tarball # 1
