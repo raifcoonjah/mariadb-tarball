@@ -49,4 +49,4 @@ MIT
 Author Information
 ------------------
 
-This role was created in 2023 by Raif Coonjah and was reviews by Yash for the ansible training.
+This role was created in 2024 by Raif Coonjah.
